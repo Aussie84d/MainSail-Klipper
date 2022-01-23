@@ -4,19 +4,63 @@
 ### MacOSX users: If you use Textedit to edit this file make sure to use 
 ### "plain text format" and "disable smart quotes" in "Textedit > Preferences"
 #
-# For  all available options see 
+# For available options see 
 # https://faq.octoprint.org/mjpg-streamer-config
 #
-### Configure which camera to use defaults to auto
-### Available options are:
-### - auto: tries first usb webcam, if that's not available tries raspi cam
-### - usb: only tries usb webcam (640x480 px and a framerate of 10 fps)
-### - raspi: only tries raspi cam (Defaults to 10fps)
+### Selet which camera to use. Defaults to auto
+### =auto...............: Tries first usb webcam, if that's not available tries raspi cam
+### =usb................: Only tries usb webcam
+### =raspi..............: Only tries raspi cam
 #
 camera=usb
 #
-camera_usb_options="-d /dev/2109:3431 -r 640x480 -f 12"
-#camera_raspi_options="-fps 12"
+camera_usb_options="-f 12 -r 640x480 -wb auto -d /dev/2109:3431"
+#
+## USB Options - Defaults to 640x480 and 10 fps
+##[-d | --device ].......: video device to open (your camera)
+##[-r | --resolution ]...: the resolution of the video device, can be one of the following strings: QSIF QCIF CGA QVGA CIF VGA SVGA XGA SXGA or a custom value like the following example: 640x480
+##[-f | --fps ]..........: frames per second (activates YUYV format, disables MJPEG)
+##[-m | --minimum_size ].: drop frames smaller then this limit, useful if the webcam produces small-sized garbage frames may happen under low light conditions
+##[-e | --every_frame ]..: drop all frames except numbered
+##[-n | --no_dynctrl ]...: do not initalize dynctrls of Linux-UVC driver
+##[-l | --led ]..........: switch the LED "on", "off", let it "blink" or leave it up to the driver using the value "auto"
+##[-br ].................: Set image brightness (auto or integer)
+##[-co ].................: Set image contrast (integer)
+##[-sh ].................: Set image sharpness (integer)
+##[-sa ].................: Set image saturation (integer)
+##[-cb ].................: Set color balance (auto or integer)
+##[-wb ].................: Set white balance (auto or integer)
+##[-ex ].................: Set exposure (auto, shutter-priority, aperature-priority, or integer)
+##[-bk ].................: Set backlight compensation (integer)
+##[-rot ]................: Set image rotation (0-359)
+##[-hf ].................: Set horizontal flip (true/false)
+##[-vf ].................: Set vertical flip (true/false)
+#
+#RasPi Options - Defaults to 640x480 and 10 fps
+#
+##[-fps | --framerate]...: set video framerate, default 5 frame/sec
+##[-x | --width ]........: width of frame capture, default 640
+##[-y | --height]........: height of frame capture, default 480
+##[-quality].............: set JPEG quality 0-100, default 85
+##[-usestills]...........: uses stills mode instead of video mode
+##[-preview].............: enable full screen preview
+##[-sh ].................: Set image sharpness (-100 to 100)
+##[-co ].................: Set image contrast (-100 to 100)
+##[-br ].................: Set image brightness (0 to 100)
+##[-sa ].................: Set image saturation (-100 to 100)
+##[-ISO ]................: Set capture ISO
+##[-vs ].................: Turn on video stabilisation
+##[-ev ].................: Set EV compensation
+##[-ex ].................: Set exposure mode (see raspistill notes)
+##[-awb ]................: Set AWB mode (see raspistill notes)
+##[-ifx ]................: Set image effect (see raspistill notes)
+##[-cfx ]................: Set colour effect (U:V)
+##[-mm ].................: Set metering mode (see raspistill notes)
+##[-rot ]................: Set image rotation (0-359)
+##[-stats ]..............: Compute image stats for each picture (reduces noise)
+##[-drc ]................: Dynamic range compensation level (see raspistill notes)
+##[-hf ].................: Set horizontal flip
+##[-vf ].................: Set vertical flip
 #
 ### Configuration of camera HTTP output
 #
