@@ -1,0 +1,24 @@
+### Windows users: To edit this file use Notepad++, VSCode, Atom or SublimeText.
+### Do not use Notepad or WordPad.
+#
+### MacOSX users: If you use Textedit to edit this file make sure to use 
+### "plain text format" and "disable smart quotes" in "Textedit > Preferences"
+#
+# For  all available options see 
+# https://faq.octoprint.org/mjpg-streamer-config
+#
+### Configure which camera to use defaults to auto
+### Available options are:
+### - auto: tries first usb webcam, if that's not available tries raspi cam
+### - usb: only tries usb webcam (640x480 px and a framerate of 10 fps)
+### - raspi: only tries raspi cam (Defaults to 10fps)
+#
+camera=raspi
+#
+#camera_usb_options="-d /dev/WebCam -r 1280x720 -f 12"
+camera_raspi_options="-fps 10"
+#
+### Configuration of camera HTTP output
+#
+#camera_http_webroot="./www-mainsail"
+#camera_http_options="-n -p 8080"
