@@ -1,7 +1,12 @@
-# maker-select-klipper
+# Ender 3 Pro / MainSail-Klipper
 
-Klipper config files for a Monoprice Maker Select v2.1
-Upgraded with a BigTreeTech SKR 1.3
-Using dual Z-steppers and running four TMC2208s with a BLTouch v3
+Klipper config files for a CREALITY Ender 3 Pro
+With a CREALITY CR Touch, Heated Bed
 
-For more information see the blog post at https://www.itsalllost.com/adventures-in-klipper/
+For more information see below:
+https://www.klipper3d.org/
+https://docs.mainsail.xyz/
+https://marlinfw.org/meta/gcode/
+https://github.com/Klipper3d/klipper
+https://github.com/mainsail-crew/MainsailOS
+https://www.itsalllost.com/adventures-in-klipper/
